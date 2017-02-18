@@ -1,24 +1,41 @@
 <!DOCTYPE html>
-<html>
-<head><title>My Test Extension Options</title></head>
-<body>
-
-Favorite color:
-<select id="color">
- <option value="red">red</option>
- <option value="green">green</option>
- <option value="blue">blue</option>
- <option value="yellow">yellow</option>
-</select>
-
-<label>
-  <input type="checkbox" id="like">
-  I like colors.
-</label>
-
-<div id="status"></div>
-<button id="save">Save</button>
-
 <script src="options.js"></script>
+<html>
+
+<head>
+    <title>Options</title>
+</head>
+
+<body>
+    <div>
+        <p>
+            Minutes to play:
+        </p>
+        <input type="text" id="date" data-format="mm" data-template="mm" name="date" value="15">
+    </div>
+    <div>
+        <p>
+            Interval:
+        </p>
+        <input type="text" id="date" data-format="mm" data-template="mm" name="date" value="15">
+    </div>
+    <div>
+        <p>
+            Games:
+        </p>
+        <input type="text" id="date" data-format="mm" data-template="mm" name="date" value="15">
+        <button id="addGame">Add</button>
+        <button id="removeGame">Remove Selected</button>
+        <textarea rows="4" cols="100">
+
+</textarea>
+    </div>
+    <div>
+        <p>
+            Stastics:
+        </p>
+    </div>
+    <button id="save">Save</button>
 </body>
+
 </html>
