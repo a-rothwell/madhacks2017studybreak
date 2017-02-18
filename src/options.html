@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <script src="options.js"></script>
 <html>
+
 <head>
-  <link rel="stylesheet" type="text/css" href="options.css">
+    <link rel="stylesheet" type="text/css" href="options.css">
     <title>Options</title>
 </head>
 
@@ -11,7 +12,7 @@
         <p>
             Minutes to play:
         </p>
-        <input type="text" id="mintues" data-format="mm" data-template="mm" name="date" value="15">
+        <input type="text" id="minutes" data-format="mm" data-template="mm" name="date" value="15">
     </div>
     <div>
         <p>
@@ -24,18 +25,20 @@
             Games:
         </p>
         <input type="text" id="date" data-format="mm" data-template="mm" name="date" value="">
-        <button id="addGame">Add</button>
-        <button id="removeGame">Remove Selected</button>
+        <button id="addGame" class="button">Add</button>
+        <button id="removeGame"class="button">Remove Selected</button>
+    </div>
+    <div>
         <select id="gamesList" size="10" multiple="" style="width: 500px; background: white;">
 
 </select>
     </div>
-    <div>
+    <div id = "stastics">
         <p>
             Stastics:
         </p>
+        <button id="savebutton" class="button">Save</button>
     </div>
-    <button id="save">Save</button>
 </body>
 
 </html>
