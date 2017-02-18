@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
-  document.getElementById("addgame").onclick = function newEntry() {
+  document.getElementById("addGame").onclick = function addNewGame() {
       chrome.storage.sync.set({
-          //object:
-          document.getElementById("addValue").value,
+          'link': document.getElementById("addValue").value,
       });
   }
+
 })
