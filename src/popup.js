@@ -11,5 +11,3 @@ chrome.storage.sync.get('link', function(value) {
 });
 
 document.write("HERE");
-
-document.write(document.getElementById('storage').value);
