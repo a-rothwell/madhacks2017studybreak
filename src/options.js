@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('foo')
+  //console.log('foo')
     chrome.storage.sync.get(['minutes', 'interval'], function(value) {
-        console.log(value)
+        //console.log(value)
         document.getElementById("minutes").value = value.minutes;
         document.getElementById("interval").value = value.interval;
     });
@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
       chrome.storage.sync.set({
           'minutes': document.getElementById("minutes").value,
           'interval': document.getElementById("interval").value
+      });
+  }
+
+  document.getElementById("addgame").onclick = function newEntry() {
+      chrome.storage.sync.set({
+          //object:
+          document.getElementById("addValue").value,
       });
   }
 })
