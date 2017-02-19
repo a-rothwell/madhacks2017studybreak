@@ -1,6 +1,7 @@
 chrome.tabs.onUpdated.addListener(function(tab) {
       chrome.tabs.getSelected(function(tab){
-        chrome.storage.sync.get(['link', 'minutes', 'canPlay', 'interval'], function(value){
+        chrome.storage.sync.get(['link', 'minutes', 'canPlay', 'interval', 'power'], function(value){
+          if(value.power=='ON'){
             if(tab.url == value.link){
               if(value.canPlay == 'no'){
                 chrome.tabs.update(tab.id, {url: "blocked.html"});
@@ -18,8 +19,8 @@ chrome.tabs.onUpdated.addListener(function(tab) {
                 }
           }
           }
+        }
         });
       });
       //chrome.tabs.update(tab.id, {url: "https://www.reddit.com"});
-
 });

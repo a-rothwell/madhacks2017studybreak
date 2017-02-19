@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+
     document.getElementById("savebutton").onclick = function saveChanges() {
         document.getElementById("alert").innerHTML = "<div class = 'alert alert-success fade in'><strong>Changes Saved</strong></div>"
         chrome.storage.sync.set({
@@ -21,9 +22,11 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("iobutton").onclick = function toggle() {
         var elem = document.getElementById("iobutton");
         if (elem.value == "ON") {
+            chrome.storage.sync.set({'power': 'ON'});
             elem.value = "OFF";
             elem.className = "btn btn-danger"
         } else {
+            chrome.storage.sync.set({'power': 'OFF'});
             elem.value = "ON";
             elem.className = "btn btn-success"
         }
