@@ -1,3 +1,5 @@
+var moment = require('moment');
+document.getElementById("time").value = moment().valueOf();
 chrome.tabs.getSelected(function(tab) {
     url = tab.url;
     console.log(url);
@@ -14,7 +16,7 @@ if (new String(url) == new String(gameUrl)) {
     //     });
     // });
 } else {
-    
+
 }
 //
 // var id;
