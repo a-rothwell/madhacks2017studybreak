@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
+
+<div id = "container" align = "middle">
+
+<div id = "header">
 <head>
     <link rel="icon" type="image/png" href="studyBreak.png">
     <link rel="stylesheet" type="text/css" href="options.css">
     <title>Options</title>
-</head>
 
+
+    <h2><img align = "middle" src = "spinning.gif" height = "50" width  "50"/>
+      Study Break: Options</h2>
+</head>
+</div>
+
+
+<div id = "body">
 <body>
 
-  <h2><img align = "middle" src = "settings.png" height = "50" width  "50"/>
-    Study Break: Options</h2>
+<div class = "well" style = "width: 275px;">
     <div>
         <p>
             Minutes to play:
@@ -18,12 +34,14 @@
         <input type="text" id="minutes" value = "10">
     </div>
     <div>
+    </br>
         <p>
             Minutes to block between sessions:
         </p>
         <input type="text" id="interval" value = "60">
     </div>
     <div>
+    </br>
         <p>
             Link to your game:
         </p>
@@ -31,8 +49,24 @@
     </div>
 
   </br>
-    <button id="savebutton" class="button">Save</button>
+    <button id="savebutton" class="btn btn-primary">Save</button>
+  </br>
+</br>
+    <p id = "alert"></p>
+</div>
 
 </body>
+</div>
+
 <script src="options.js"></script>
+
+<div id = "footer">
+<footer>
+</br>
+  <p align = "middle" style = "color: #FFFFFC">Study Break was created during Madhacks 2017 by Andrew Rothwell and Lucas Shanker</p>
+</footer>
+</div>
+
+</div>
+
 </html>
