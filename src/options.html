@@ -2,43 +2,37 @@
 <html>
 
 <head>
+    <link rel="icon" type="image/png" href="studyBreak.png">
     <link rel="stylesheet" type="text/css" href="options.css">
     <title>Options</title>
 </head>
 
 <body>
+
+  <h2><img align = "middle" src = "settings.png" height = "50" width  "50"/>
+    Study Break: Options</h2>
     <div>
-        <button id="clear" class="button">Clear</button>
         <p>
             Minutes to play:
         </p>
-        <input type="text" id="minutes" data-format="mm" data-template="mm" name="date">
+        <input type="text" id="minutes" value = "10">
     </div>
     <div>
         <p>
-            Interval:
+            Minutes to block between sessions:
         </p>
-        <input type="text" id="interval" data-format="mm" data-template="mm" name="date">
+        <input type="text" id="interval" value = "60">
     </div>
     <div>
         <p>
-            Games:
+            Link to your game:
         </p>
-        <input type="text" id="addValue">
-        <button id="addGame" class="button">Add</button>
-        <button id="removeGame"class="button">Remove Selected</button>
+        <input type="text" id="addValue" value = "http://slither.io/">
     </div>
-    <div>
-        <select id="gamesList" size="10" multiple="" style="width: 500px; background: white;">
 
-</select>
-    </div>
-    <div id = "statistics">
-        <p>
-            Statistics:
-        </p>
-        <button id="savebutton" class="button">Save</button>
-    </div>
+  </br>
+    <button id="savebutton" class="button">Save</button>
+
 </body>
 <script src="options.js"></script>
 </html>
