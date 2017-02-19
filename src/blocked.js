@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-
+function setTimeRemaining(){
 chrome.storage.sync.get(['intervalStart', 'interval'], function(value){
   var startTime = value.intervalStart;
   var currentTime = (new Date()).getTime();
@@ -28,3 +28,6 @@ chrome.storage.sync.get(['intervalStart', 'interval'], function(value){
 
   document.getElementById('time').innerHTML = milliseconds;
 });
+}
+
+window.setInterval(setTimeRemaining, 100);
