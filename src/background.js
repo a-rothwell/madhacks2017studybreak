@@ -20,6 +20,8 @@ chrome.tabs.onUpdated.addListener(function(tab) {
                 setTimeout(redirect, 60000*value.minutes);
 
                 function redirect(){
+                  chrome.storage.sync.set({'intervalStart': (new Date()).getTime()});
+                  console.log('here');
                   chrome.storage.sync.set({'canPlay': "no"});
                   chrome.tabs.update(tab.id, {url: "blocked.html"});
                   setTimeout(resetCanPlay, 60000*value.interval);

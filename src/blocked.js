@@ -8,4 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
             chrome.tabs.remove(id, function() {});
         });
     }
-})
+});
+
+console.log('in blocked.JS');
+chrome.storage.sync.get(['intervalStart', 'interval'], function(value){
+  var startTime = value.intervalStart;
+  var currentTime = (new Date()).getTime();
+  var timeStep = (value.interval)*60000;
+  var milliseconds = timeStep - (currentTime - startTime);
+
+  document.getElementById('time').innerHTML = (milliseconds * 0.000016666666666).toFixed(0);
+});
