@@ -1,12 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
-    chrome.storage.sync.get(['minutes', 'interval'], function(value) {
+    chrome.storage.sync.get(['minutes', 'interval', 'link', 'power'], function(value) {
         if (value.minutes != 'undefined') {
             document.getElementById("minutes").value = value.minutes;
         }
         if (value.interval != 'undefined') {
             document.getElementById("interval").value = value.interval;
         }
+
+        if (value.link != 'undefined') {
+            document.getElementById("addValue").value = value.link;
+        }
+
+        if (value.power != 'undefined') {
+            if(value.power=='ON'){
+              turnOn();
+            }else{
+              turnOff();
+            }
+        }
     });
+
 
 
     document.getElementById("savebutton").onclick = function saveChanges() {
@@ -37,19 +50,29 @@ document.addEventListener('DOMContentLoaded', function() {
         var elem = document.getElementById("iobutton");
         var gears = document.getElementById("gears");
         if (elem.value == "TURN ON") {
-            chrome.storage.sync.set({'power': 'ON'});
-            elem.value = "TURN OFF";
-            elem.className = "btn btn-danger"
-            gears.src = 'spinning.gif';
+            turnOn();
 
         } else {
-            chrome.storage.sync.set({'canPlay':'Yes'});
-            gears.src = 'spinning-0.jpg';
-            chrome.storage.sync.set({'power': 'OFF'});
-            elem.value = "TURN ON";
-            elem.className = "btn btn-success"
+            turnOff();
         }
     }
 
+    function turnOn(){
+      var elem = document.getElementById("iobutton");
+      var gears = document.getElementById("gears");
+      chrome.storage.sync.set({'power': 'ON'});
+      elem.value = "TURN OFF";
+      elem.className = "btn btn-danger";
+      gears.src = 'spinning.gif';
+    }
+    function turnOff(){
+      var elem = document.getElementById("iobutton");
+      var gears = document.getElementById("gears");
+      chrome.storage.sync.set({'canPlay':'Yes'});
+      gears.src = 'spinning-0.jpg';
+      chrome.storage.sync.set({'power': 'OFF'});
+      elem.value = "TURN ON";
+      elem.className = "btn btn-success";
+    }
 
 });
