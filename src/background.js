@@ -12,7 +12,7 @@ chrome.runtime.onInstalled.addListener(function(details){
 chrome.tabs.onUpdated.addListener(function(tabId, info, tab) {
   if(info.status == "complete"){
       chrome.tabs.getSelected(function(tab){
-        chrome.storage.sync.get(['link', 'minutes', 'canPlay', 'interval', 'power', 'doneStuff'], function(value){
+        chrome.storage.sync.get(['link','checked', 'minutes', 'canPlay', 'interval', 'power', 'doneStuff'], function(value){
           if(value.power=='ON'){
             if(tab.url == value.link){
               if(value.canPlay == 'no'){
@@ -21,8 +21,9 @@ chrome.tabs.onUpdated.addListener(function(tabId, info, tab) {
 
 
                 setTimeout(redirect, 60000*value.minutes);
-                setTimeout(alert, 60000*(value.minutes - 1));
-
+                if(value.checked){
+                  setTimeout(alert, 60000*(value.minutes - 1));
+                }
 
                 function alert(){
                   window.alert('One minute remaining.  Don\'t forget to save!');

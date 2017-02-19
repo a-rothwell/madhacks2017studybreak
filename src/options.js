@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     document.getElementById("savebutton").onclick = function saveChanges() {
-        document.getElementById("alert").innerHTML = "<div class = 'alert alert-success fade in'><strong>Changes Saved</strong></div>"
+        document.getElementById("alert").innerHTML = "<div class = 'alert alert-success fade in'><strong>Changes Saved</strong></div>";
+
         chrome.storage.sync.set({
             'link': document.getElementById("addValue").value
         });
@@ -18,7 +19,20 @@ document.addEventListener('DOMContentLoaded', function() {
             'minutes': document.getElementById("minutes").value,
             'interval': document.getElementById("interval").value
         });
+
+        if(document.getElementById('checkbox').checked){
+
+          chrome.storage.sync.set({
+              'checked': true
+          });
+        }else{
+          chrome.storage.sync.set({
+              'checked': false
+          });
+        }
+
     }
+
     document.getElementById("iobutton").onclick = function toggle() {
         var elem = document.getElementById("iobutton");
         var gears = document.getElementById("gears");
