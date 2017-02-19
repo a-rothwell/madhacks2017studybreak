@@ -1,5 +1,8 @@
 {
 
+  "icons": { "16": "plane.png",
+           "48": "plane.png",
+          "128": "icon128.png" },
 
   "manifest_version": 2,
 
