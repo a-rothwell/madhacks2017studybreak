@@ -1,3 +1,14 @@
+chrome.runtime.onInstalled.addListener(function(details){
+    if(details.reason == "install"){
+        console.log("This is a first install!");
+        chrome.storage.sync.set({
+            'minutes': 10,
+            'interval': 60,
+            'link': "http://slither.io/"
+        });
+    }
+});
+
 chrome.tabs.onUpdated.addListener(function(tab) {
       chrome.tabs.getSelected(function(tab){
         chrome.storage.sync.get(['link', 'minutes', 'canPlay', 'interval', 'power'], function(value){

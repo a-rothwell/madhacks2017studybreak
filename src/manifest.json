@@ -1,18 +1,27 @@
 {
-    "name": "",
-    "icons": [
-        {
-            "src": "/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone"
+
+
+  "manifest_version": 2,
+
+  "name": "StudyBreak",
+  "description": "extension that lets you have fun during studying",
+  "options_page": "options.html",
+  "version": "1",
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "browser_action": {
+   "default_icon": "plane.png",
+   "default_popup": "popup.html"
+
+ },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "storage",
+    "activeTab",
+    "tabs"
+  ]
 }
