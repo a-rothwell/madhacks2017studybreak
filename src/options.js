@@ -21,13 +21,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     document.getElementById("iobutton").onclick = function toggle() {
         var elem = document.getElementById("iobutton");
-        if (elem.value == "ON") {
+        var gears = document.getElementById("gears");
+        if (elem.value == "TURN ON") {
             chrome.storage.sync.set({'power': 'ON'});
-            elem.value = "OFF";
+            elem.value = "TURN OFF";
             elem.className = "btn btn-danger"
+            gears.src = 'spinning.gif';
+
         } else {
+
+            gears.src = 'spinning-0.jpg';
             chrome.storage.sync.set({'power': 'OFF'});
-            elem.value = "ON";
+            elem.value = "TURN ON";
             elem.className = "btn btn-success"
         }
     }
