@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
             gears.src = 'spinning.gif';
 
         } else {
-
+            chrome.storage.sync.set({'canPlay':'Yes'});
             gears.src = 'spinning-0.jpg';
             chrome.storage.sync.set({'power': 'OFF'});
             elem.value = "TURN ON";
