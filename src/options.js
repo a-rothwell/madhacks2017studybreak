@@ -19,21 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.getElementById("addGame").onclick = function addNewGame() {
 
-    chrome.storage.sync.get('links', function(value) {
-        //If the array of links has yet to be initialized
-        if(typeof value.links == 'undefined'){
-          //make a new array, add the current link to the array, and save it
-          var linkArray = [];
-          linkArray[0] = document.getElementById("addValue").value;
-          chrome.storage.sync.set({
-              'links': linkArray
-          });
-        }else{
-          //Add the new value to the array
-          (value.links).push(document.getElementById("addValue").value);
-        }
-
-    });
+    chrome.storage.sync.set({'link': document.getElementById("addValue").value});
 
 
   }
