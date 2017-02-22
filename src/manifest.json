@@ -12,7 +12,6 @@
   "options_page": "options.html",
   "version": "1.0.0",
 
-
   "background": {
     "scripts": ["background.js"]
   },

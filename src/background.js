@@ -1,3 +1,4 @@
+
 chrome.runtime.onInstalled.addListener(function(details){
     if(details.reason == "install"){
         console.log("This is a first install!");
@@ -6,7 +7,15 @@ chrome.runtime.onInstalled.addListener(function(details){
             'interval': 60,
             'link': "http://slither.io/"
         });
+
+        chrome.tabs.create({
+            url: "instructions.html"
+        });
     }
+
+
+
+
 });
 
 chrome.tabs.onUpdated.addListener(function(tabId, info, tab) {

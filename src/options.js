@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     document.getElementById("savebutton").onclick = function saveChanges() {
+    
         document.getElementById("alert").innerHTML = "<div class = 'alert alert-success fade in'><strong>Changes Saved</strong></div>";
 
         chrome.storage.sync.set({
